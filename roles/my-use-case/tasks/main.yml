@@ -1,3 +1,42 @@
 ---
-- debug:
-    msg: "Hello from your external use case!"
+- include_role:
+    name: microk8s
+
+- include_role:
+    name: dt-activegate-private-synth-classic
+
+- include_role:
+    name: dt-operator
+
+- include_role:
+    name: monaco
+
+- include_role:
+    name: app-easytravel
+
+- include_role:
+    name: app-easytravel
+    tasks_from: apply-monaco
+
+- include_role:
+    name: app-unguard
+
+- include_role:
+    name: app-unguard
+    tasks_from: apply-monaco
+
+# - include_role:
+#     name: app-easytravel
+#     tasks_from: delete-monaco
+
+# Include and template use case specific values before installing Dashboard
+- set_fact:
+    include_dashboard_value_file: "{{ role_path }}/templates/easytravel-dashboard.yml.j2"
+
+- include_role:
+    name: dashboard
+    tasks_from: template-values-file
+
+- include_role:
+    name: dashboard
+
