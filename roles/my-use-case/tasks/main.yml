@@ -21,13 +21,6 @@
 # - include_role:
 #     name: app-unguard
 
-# - include_role:
-#     name: app-unguard
-#     tasks_from: apply-dt-configuration
-
-# - include_role:
-#     name: app-easytravel
-#     tasks_from: delete-monaco
 
 # Include and template use case specific values before installing Dashboard
 - set_fact:
