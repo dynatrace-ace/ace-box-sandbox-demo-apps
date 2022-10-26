@@ -18,8 +18,8 @@
     name: app-easytravel
     tasks_from: apply-monaco
 
-# - include_role:
-#     name: app-unguard
+- include_role:
+    name: app-unguard
 
 
 # Include and template use case specific values before installing Dashboard
