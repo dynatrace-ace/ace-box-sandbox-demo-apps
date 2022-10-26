@@ -23,7 +23,7 @@
 
 - include_role:
     name: app-unguard
-    tasks_from: apply-monaco
+    tasks_from: apply-dt-configuration
 
 # - include_role:
 #     name: app-easytravel
