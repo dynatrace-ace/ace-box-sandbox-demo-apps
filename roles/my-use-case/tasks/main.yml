@@ -24,14 +24,26 @@
     name: app-unguard
 
 - include_role:
+    name: app-unguard
+    tasks_from: apply-dt-configuration
+  vars:
+    skip_synthetic_monitor: "false"
+
+- include_role:
     name: app-easytrade
+
+- include_role:
+    name: app-easytrade
+    tasks_from: apply-dt-configuration
 
 - include_role:
     name: app-hipstershop
 
-# - include_role:
-#     name: app-easytrade
-#     tasks_from: apply-dt-configuration
+- include_role:
+    name: app-hipstershop
+    tasks_from: apply-dt-configuration
+  vars:
+    skip_synthetic_monitor: "false"
 
 # Include and template use case specific values before installing Dashboard
 - set_fact:
