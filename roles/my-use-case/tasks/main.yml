@@ -7,6 +7,10 @@
   vars:
     activegate_install_synthetic: true
 
+- name: Install Monaco
+  include_role:
+    name: monaco-v2
+
 - include_role:
     name: dt-operator
 
@@ -19,6 +23,15 @@
 - include_role:
     name: app-unguard
 
+- include_role:
+    name: app-easytrade
+
+- include_role:
+    name: app-hipstershop
+
+# - include_role:
+#     name: app-easytrade
+#     tasks_from: apply-dt-configuration
 
 # Include and template use case specific values before installing Dashboard
 - set_fact:
