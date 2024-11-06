@@ -39,9 +39,9 @@
 - include_role:
     name: app-easytrade
 
-- include_role:
-    name: app-easytrade
-    tasks_from: apply-dt-configuration
+# - include_role:
+#     name: app-easytrade
+#     tasks_from: apply-dt-configuration
 
 - include_role:
     name: app-hipstershop
