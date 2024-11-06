@@ -1,13 +1,6 @@
 ---
-- set_fact:
-    ingress_class: traefik
-
 - include_role:
     name: k3s
-
-- include_role:
-    name: k3s
-    tasks_from: restart
 
 - include_role:
     name: dt-activegate-classic
